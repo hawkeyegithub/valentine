@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Nishma Babyyy 💖</title>
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      overflow: hidden;
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatUp 6s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Main Box */
+    .box {
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+      z-index: 5;
+      animation: popIn 1s ease;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #e60073;
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      color: #ff3385;
+      font-size: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    #yes {
+      background: #ff4d88;
+      color: white;
+    }
+
+    #yes:hover {
+      transform: scale(1.1);
+    }
+
+    #no {
+      background: #666;
+      color: white;
+      position: absolute;
+    }
+
+    img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid pink;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    #gif {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Fireworks */
+    .firework {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: gold;
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      from {
+        transform: scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: scale(8);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Romantic Music (Best Love Tune) -->
+  <audio autoplay loop>
+    <source src="https://www.chosic.com/wp-content/uploads/2021/09/Romantic.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- ✅ Floating Hearts Generator -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      heart.style.opacity = Math.random();
+      heart.style.transform = "scale(" + (Math.random() + 0.6) + ")";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- ✅ Valentine Box -->
+  <div class="box">
+
+    <!-- ✅ HER PHOTO -->
+    <img src="nishma.jpg" alt="Nishma Babyyy">
+
+    <h1>Nishma Babyyy 💖</h1>
+    <h2>Will you be my Valentine? ❤️</h2>
+
+    <button id="yes">Yes 😍</button>
+    <button id="no">No 🙈</button>
+
+    <div id="gif">
+      <h2>Yayyyy 😘 I Love You Babyyy 💕🎆</h2>
+      <img style="width:250px; height:auto; border-radius:15px;"
+        src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+    </div>
+
+  </div>
+
+  <script>
+    const noButton = document.getElementById("no");
+    const yesButton = document.getElementById("yes");
+    const gifDiv = document.getElementById("gif");
+
+    // ✅ No Button Runs Away
+    function moveNoButton() {
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 120);
+
+      noButton.style.left = x + "px";
+      noButton.style.top = y + "px";
+    }
+
+    noButton.addEventListener("mouseover", moveNoButton);
+    noButton.addEventListener("click", moveNoButton);
+
+    // ✅ Fireworks Effect
+    function fireworks() {
+      for (let i = 0; i < 15; i++) {
+        let fw = document.createElement("div");
+        fw.className = "firework";
+        fw.style.left = Math.random() * window.innerWidth + "px";
+        fw.style.top = Math.random() * window.innerHeight + "px";
+
+        document.body.appendChild(fw);
+
+        setTimeout(() => fw.remove(), 1000);
+      }
+    }
+
+    // ✅ YES CLICK ACTION
+    yesButton.addEventListener("click", () => {
+      gifDiv.style.display = "block";
+      yesButton.style.display = "none";
+      noButton.style.display = "none";
+
+      fireworks();
+      setInterval(fireworks, 1200);
+    });
+  </script>
+
+</body>
+</html>
