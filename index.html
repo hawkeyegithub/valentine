@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> My Pretty Queen💖</title>
+  <title> To Haggu's Gf💖</title>
 
   <style>
     body {
@@ -16,7 +16,7 @@
       overflow: hidden;
     }
 
-    /* Floating Hearts */
+    /* ✅ Floating Hearts Animation */
     .heart {
       position: absolute;
       width: 20px;
@@ -57,7 +57,7 @@
       }
     }
 
-    /* Main Box */
+    /* ✅ Valentine Box */
     .box {
       text-align: center;
       padding: 40px;
@@ -82,15 +82,22 @@
       }
     }
 
+    /* ✅ Heading Text Black */
     h1 {
-      color: #e60073;
+      color: black;
       font-size: 30px;
       margin-bottom: 8px;
     }
 
+    /* ✅ Normal h2 (Pink) */
     h2 {
       color: #ff3385;
       font-size: 20px;
+    }
+
+    /* ✅ Surprise Message h2 Black */
+    #gif h2 {
+      color: black;
     }
 
     button {
@@ -118,6 +125,7 @@
       position: absolute;
     }
 
+    /* ✅ Nishma Photo Circle */
     img {
       width: 140px;
       height: 140px;
@@ -127,6 +135,7 @@
       object-fit: cover;
     }
 
+    /* ✅ YES Surprise */
     #gif {
       display: none;
       margin-top: 20px;
@@ -138,7 +147,7 @@
       to { opacity: 1; }
     }
 
-    /* Fireworks */
+    /* ✅ Fireworks */
     .firework {
       position: absolute;
       width: 8px;
@@ -163,7 +172,7 @@
 
 <body>
 
-  <!-- ✅ Romantic Music (Best Love Tune) -->
+  <!-- ✅ Romantic Background Music -->
   <audio autoplay loop>
     <source src="https://www.chosic.com/wp-content/uploads/2021/09/Romantic.mp3" type="audio/mp3">
   </audio>
@@ -181,34 +190,46 @@
     }
   </script>
 
-  <!-- ✅ Valentine Box -->
+  <!-- ✅ Valentine Proposal Box -->
   <div class="box">
 
-    <!-- ✅ HER PHOTO -->
+    <!-- ✅ Her Photo -->
     <img src="nishma.jpg" alt="Nishma Babyyy">
 
-    <h1> Hello My koootie pie😚</h1>
-    <h2> Its feb 2026!! Will you be my Valentine? ❤️</h2>
+    <h1> HELLO, MY KOOTIE PIE👸🏻😚 </h1>
+    <h2> IT'S VALENTINE SEASONNN💌 </h2>
+    <h2> WILL YOU BE MINE?🥹❤️ </h2>
 
-    <button id="yes">Yes 😍</button>
-    <button id="no">No 🙈</button>
+    <button id="yes">Yes 🫶🏻</button>
+    <button id="no">No 🌚</button>
 
+    <!-- ✅ Surprise After YES -->
     <div id="gif">
-      <h2> Bitch😂 I knew you will not select"NO"👻</h2>
-      <h2> I lava Youhh🥹🎆</h2>
+      <h2> Nice Try..😭😂 but you're my Valentine now😚</h2>
+      <h2> I Lava Youuh Babyyy🐧💕.. Waiting to meet you soon🫂</h2>
       <img style="width:250px; height:auto; border-radius:15px;"
         src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
     </div>
 
   </div>
 
+  <!-- ✅ Functionality Script -->
   <script>
     const noButton = document.getElementById("no");
     const yesButton = document.getElementById("yes");
     const gifDiv = document.getElementById("gif");
 
-    // ✅ No Button Runs Away
+    let moveCount = 0;
+    const maxMoves = 30;
+
     function moveNoButton() {
+      if (moveCount >= maxMoves) {
+        noButton.style.display = "none";
+        return;
+      }
+
+      moveCount++;
+
       const x = Math.random() * (window.innerWidth - 150);
       const y = Math.random() * (window.innerHeight - 120);
 
@@ -219,11 +240,11 @@
     noButton.addEventListener("mouseover", moveNoButton);
     noButton.addEventListener("click", moveNoButton);
 
-    // ✅ Fireworks Effect
     function fireworks() {
       for (let i = 0; i < 15; i++) {
         let fw = document.createElement("div");
         fw.className = "firework";
+
         fw.style.left = Math.random() * window.innerWidth + "px";
         fw.style.top = Math.random() * window.innerHeight + "px";
 
@@ -233,7 +254,6 @@
       }
     }
 
-    // ✅ YES CLICK ACTION
     yesButton.addEventListener("click", () => {
       gifDiv.style.display = "block";
       yesButton.style.display = "none";
@@ -246,4 +266,6 @@
 
 </body>
 </html>
+
+
 
