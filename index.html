@@ -82,26 +82,14 @@
       }
     }
 
-    /* ✨ Shining Sparkle Animation for Main Heading */
+    /* ✅ MAIN Heading (No Sparkle + Bold Red) */
     h1 {
-      color: RED;
+      color: red;
       font-size: 30px;
       margin-bottom: 8px;
-      animation: glowSparkle 1.5s infinite alternate;
+      font-weight: bold;
     }
 
-    @keyframes glowSparkle {
-      0% {
-        text-shadow: 0 0 5px #ff4da6, 0 0 10px #ff99cc;
-        transform: scale(1);
-      }
-      100% {
-        text-shadow: 0 0 15px #ff1a75, 0 0 25px #ffb3d9;
-        transform: scale(1.05);
-      }
-    }
-
-    /* ✅ Normal h2 */
     h2 {
       color: #ff3385;
       font-size: 20px;
@@ -112,13 +100,11 @@
       color: black;
     }
 
-    /* ✅ NICE TRY Smaller + Single Line */
     #gif h2:first-child {
       font-size: 16px;
       white-space: nowrap;
     }
 
-    /* ✅ I LOVE YOU BABY in Red */
     #gif h2:last-child {
       color: red;
       font-size: 20px;
@@ -197,8 +183,8 @@
 
 <body>
 
-  <!-- ✅ Romantic Background Music -->
-  <audio autoplay loop>
+  <!-- ✅ Background Music (Plays After YES Click) -->
+  <audio id="bgMusic" loop>
     <source src="https://www.chosic.com/wp-content/uploads/2021/09/Romantic.mp3" type="audio/mp3">
   </audio>
 
@@ -218,7 +204,6 @@
   <!-- ✅ Valentine Proposal Box -->
   <div class="box">
 
-    <!-- ✅ Her Photo -->
     <img src="nishma.jpg" alt="Nishma Babyyy">
 
     <h1> HELLO MY KOOTIE PIE😚 </h1>
@@ -228,7 +213,6 @@
     <button id="yes">Yes 🫶🏻</button>
     <button id="no">No 🌚</button>
 
-    <!-- ✅ Surprise After YES -->
     <div id="gif">
       <h2> NICE TRY👀😂 I KNEW YOU COULD'NT SAY NO😚</h2>
       <h2> I LOVE YOU BABY♥️ </h2>
@@ -243,6 +227,7 @@
     const noButton = document.getElementById("no");
     const yesButton = document.getElementById("yes");
     const gifDiv = document.getElementById("gif");
+    const music = document.getElementById("bgMusic");
 
     let moveCount = 0;
     const maxMoves = 30;
@@ -280,6 +265,10 @@
     }
 
     yesButton.addEventListener("click", () => {
+
+      // ✅ Play Music After Interaction
+      music.play();
+
       gifDiv.style.display = "block";
       yesButton.style.display = "none";
       noButton.style.display = "none";
