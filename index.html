@@ -82,22 +82,47 @@
       }
     }
 
-    /* ✅ Heading Text Black */
+    /* ✨ Shining Sparkle Animation for Main Heading */
     h1 {
       color: black;
       font-size: 30px;
       margin-bottom: 8px;
+      animation: glowSparkle 1.5s infinite alternate;
     }
 
-    /* ✅ Normal h2 (Pink) */
+    @keyframes glowSparkle {
+      0% {
+        text-shadow: 0 0 5px #ff4da6, 0 0 10px #ff99cc;
+        transform: scale(1);
+      }
+      100% {
+        text-shadow: 0 0 15px #ff1a75, 0 0 25px #ffb3d9;
+        transform: scale(1.05);
+      }
+    }
+
+    /* ✅ Normal h2 */
     h2 {
       color: #ff3385;
       font-size: 20px;
     }
 
-    /* ✅ Surprise Message h2 Black */
+    /* ✅ Surprise Message */
     #gif h2 {
       color: black;
+    }
+
+    /* ✅ NICE TRY Smaller + Single Line */
+    #gif h2:first-child {
+      font-size: 16px;
+      white-space: nowrap;
+    }
+
+    /* ✅ I LOVE YOU BABY in Red */
+    #gif h2:last-child {
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
     }
 
     button {
@@ -266,7 +291,5 @@
 
 </body>
 </html>
-
-
 
 
